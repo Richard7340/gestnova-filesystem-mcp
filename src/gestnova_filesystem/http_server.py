@@ -44,7 +44,7 @@ async def call_tool(req: CallRequest) -> dict[str, Any]:
 
 def main() -> None:
     port = int(os.getenv("PORT", "8016"))
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    uvicorn.run(app, host=os.getenv("HOST", "0.0.0.0"), port=port)
 
 
 if __name__ == "__main__":
